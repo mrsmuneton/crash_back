@@ -5,8 +5,8 @@ defmodule CrashBackWeb.InfoController do
   alias CrashBack.Information.Info
 
   def index(conn, _params) do
-    info = Information.list_info()
-    render(conn, "index.html", info: info)
+    information = Information.list_info()
+    render(conn, "index.json", info: information)
   end
 
   def new(conn, _params) do

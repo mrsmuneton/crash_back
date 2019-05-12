@@ -6,7 +6,7 @@ defmodule CrashBackWeb.ItemController do
 
   def index(conn, _params) do
     creation = Creation.list_creation()
-    render(conn, "index.html", creation: creation)
+    render(conn, "index.json", item: creation)
   end
 
   def new(conn, _params) do

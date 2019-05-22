@@ -49,4 +49,12 @@ config :logger, :console, format: "[$level] $message\n"
 config :phoenix, :stacktrace_depth, 20
 
 # Configure your database
-import_config "prod.secret.exs"
+
+# Configure your database
+config :crash_back, CrashBack.Repo,
+  adapter: Ecto.Adapters.Postgres,
+  username: "postgres",
+  password: "postgres",
+  database: "crashback",
+  hostname: "localhost",
+  pool: Ecto.Adapters.SQL.Sandbox

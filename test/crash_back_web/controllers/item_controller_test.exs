@@ -15,7 +15,7 @@ defmodule CrashBackWeb.ItemControllerTest do
   describe "index" do
     test "lists all creation", %{conn: conn} do
       conn = get conn, item_path(conn, :index)
-      assert html_response(conn, 200) =~ "Listing Creation"
+      assert json_response(conn, 200) == %{"item" => []}
     end
   end
 

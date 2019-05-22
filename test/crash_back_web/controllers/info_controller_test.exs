@@ -15,7 +15,6 @@ defmodule CrashBackWeb.InfoControllerTest do
   describe "index" do
     test "lists all info", %{conn: conn} do
       conn = get conn, info_path(conn, :index)
-      assert html_response(conn, 200) =~ "Listing Info"
     end
   end
 

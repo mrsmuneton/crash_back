@@ -10,7 +10,6 @@ defmodule CrashBackWeb.Router do
   end
 
   pipeline :api do
-    plug CORSPlug, origin: "*"
     plug :accepts, ["json"]
   end
 
@@ -18,9 +17,6 @@ defmodule CrashBackWeb.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
-
-    resources "/info", InfoController
-    resources "/item", ItemController
   end
 
   # Other scopes may use custom stacks.

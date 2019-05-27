@@ -11,8 +11,7 @@ config :crash_back, CrashBackWeb.Endpoint,
   debug_errors: true,
   code_reloader: true,
   check_origin: false,
-  watchers: [node: ["node_modules/brunch/bin/brunch", "watch", "--stdin",
-                    cd: Path.expand("../assets", __DIR__)]]
+  watchers: []
 
 # ## SSL Support
 #
@@ -49,12 +48,10 @@ config :logger, :console, format: "[$level] $message\n"
 config :phoenix, :stacktrace_depth, 20
 
 # Configure your database
-
-# Configure your database
 config :crash_back, CrashBack.Repo,
   adapter: Ecto.Adapters.Postgres,
   username: "postgres",
   password: "postgres",
-  database: "crashback",
+  database: "crash_back_dev",
   hostname: "localhost",
-  pool: Ecto.Adapters.SQL.Sandbox
+  pool_size: 10

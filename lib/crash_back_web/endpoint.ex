@@ -35,7 +35,7 @@ defmodule CrashBackWeb.Endpoint do
   plug Plug.Session,
     store: :cookie,
     key: "_crash_back_key",
-    signing_salt: "cq97Af/a"
+    signing_salt: "Ls6O+D33"
 
   plug CrashBackWeb.Router
 

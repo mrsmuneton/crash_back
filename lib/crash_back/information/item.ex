@@ -6,6 +6,7 @@ defmodule CrashBack.Information.Item do
   schema "items" do
     field :body, :string
     field :name, :string
+    has_many :reactions, Reaction
 
     timestamps()
   end

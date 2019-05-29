@@ -1,12 +1,14 @@
 defmodule CrashBack.Information.Item do
   use Ecto.Schema
   import Ecto.Changeset
+  import CrashBack.Item.Reaction
 
 
   schema "items" do
     field :body, :string
     field :name, :string
-    has_many :reactions, Reaction
+    has_many :reactions, Item.Reaction
+    has_many :comments, {"reaction", Item.Reaction}, foreign_key: :assoc_id
 
     timestamps()
   end

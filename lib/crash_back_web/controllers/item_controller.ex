@@ -12,7 +12,6 @@ defmodule CrashBackWeb.ItemController do
   end
 
   def create(conn, %{"item" => item_params}) do
-    IO.puts("this is the thign")
     with {:ok, %Item{} = item} <- Information.create_item(item_params) do
       conn
       |> put_status(:created)

@@ -1,15 +1,15 @@
 defmodule CrashBackWeb.ItemControllerTest do
   use CrashBackWeb.ConnCase
 
-  alias CrashBack.Information
-  alias CrashBack.Information.Item
+  alias CrashBack.CrashBack
+  alias CrashBack.CrashBack.Item
 
-  @create_attrs %{body: "some body", name: "some name"}
-  @update_attrs %{body: "some updated body", name: "some updated name"}
-  @invalid_attrs %{body: nil, name: nil}
+  @create_attrs %{body: "some body", name: "some name", timestamp: ~N[2010-04-17 14:00:00.000000]}
+  @update_attrs %{body: "some updated body", name: "some updated name", timestamp: ~N[2011-05-18 15:01:01.000000]}
+  @invalid_attrs %{body: nil, name: nil, timestamp: nil}
 
   def fixture(:item) do
-    {:ok, item} = Information.create_item(@create_attrs)
+    {:ok, item} = CrashBack.create_item(@create_attrs)
     item
   end
 
@@ -33,7 +33,8 @@ defmodule CrashBackWeb.ItemControllerTest do
       assert json_response(conn, 200)["data"] == %{
         "id" => id,
         "body" => "some body",
-        "name" => "some name"}
+        "name" => "some name",
+        "timestamp" => ~N[2010-04-17 14:00:00.000000]}
     end
 
     test "renders errors when data is invalid", %{conn: conn} do
@@ -53,7 +54,8 @@ defmodule CrashBackWeb.ItemControllerTest do
       assert json_response(conn, 200)["data"] == %{
         "id" => id,
         "body" => "some updated body",
-        "name" => "some updated name"}
+        "name" => "some updated name",
+        "timestamp" => ~N[2011-05-18 15:01:01.000000]}
     end
 
     test "renders errors when data is invalid", %{conn: conn, item: item} do

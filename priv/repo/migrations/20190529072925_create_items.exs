@@ -5,6 +5,7 @@ defmodule CrashBack.Repo.Migrations.CreateItems do
     create table(:items) do
       add :name, :string
       add :body, :string
+      add :timestamp, :naive_datetime
 
       timestamps()
     end

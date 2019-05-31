@@ -13,6 +13,7 @@ defmodule CrashBackWeb.ItemView do
   def render("item.json", %{item: item}) do
     %{id: item.id,
       name: item.name,
-      body: item.body}
+      body: item.body,
+      timestamp: item.timestamp}
   end
 end

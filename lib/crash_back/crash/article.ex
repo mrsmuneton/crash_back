@@ -1,9 +1,9 @@
-defmodule CrashBack.CrashBack.Item do
+defmodule CrashBack.Crash.Article do
   use Ecto.Schema
   import Ecto.Changeset
 
 
-  schema "items" do
+  schema "articles" do
     field :body, :string
     field :name, :string
     field :timestamp, :naive_datetime
@@ -12,8 +12,8 @@ defmodule CrashBack.CrashBack.Item do
   end
 
   @doc false
-  def changeset(item, attrs) do
-    item
+  def changeset(article, attrs) do
+    article
     |> cast(attrs, [:name, :body, :timestamp])
     |> validate_required([:name, :body, :timestamp])
   end

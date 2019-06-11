@@ -17,7 +17,6 @@ defmodule CrashBackWeb.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
-    resources "/items", ItemController, except: [:new, :edit]
   end
 
   # Other scopes may use custom stacks.

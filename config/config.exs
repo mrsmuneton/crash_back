@@ -12,7 +12,7 @@ config :crash_back,
 # Configures the endpoint
 config :crash_back, CrashBackWeb.Endpoint,
   url: [host: "localhost"],
-  secret_key_base: "qsHKHa02faOTDG8LfzpM6HF5kGVXuesMCGGMQFmHd/5jZb441ZqFTkKRzyZZ+TGl",
+  secret_key_base: "UxI57sXY3/zZjVk28NWu3H60QKw+PugucT9myz/HGyLSB853lAWZRQAWuZBZBhO5",
   render_errors: [view: CrashBackWeb.ErrorView, accepts: ~w(html json)],
   pubsub: [name: CrashBack.PubSub,
            adapter: Phoenix.PubSub.PG2]

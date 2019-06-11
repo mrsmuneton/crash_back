@@ -1,8 +1,8 @@
-defmodule CrashBack.Repo.Migrations.CreateItems do
+defmodule CrashBack.Repo.Migrations.CreateArticles do
   use Ecto.Migration
 
   def change do
-    create table(:items) do
+    create table(:articles) do
       add :name, :string
       add :body, :string
       add :timestamp, :naive_datetime
